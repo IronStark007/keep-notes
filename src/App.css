@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+.header {
+  padding: 10px 20px !important;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.3) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.form-control:focus {
+  box-shadow: unset !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.textarea {
+  resize: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.button-icon {
+  background-color: white !important;
+  border-color: black !important;
+  color: black !important;
+  font-size: 13px !important;
 }
 
-.App-link {
-  color: #61dafb;
+.button-icon:hover {
+  color: white !important;
+  border-color: white !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.close:hover {
+  background-color: rgb(255, 157, 0) !important;
+  border-color: rgb(255, 157, 0) !important
+}
+
+.save:hover {
+  background-color: green !important;
+}
+
+.pinned:hover {
+  background-color: skyblue !important;
+}
+
+.delete:hover {
+  background-color: red !important;
+}
+
+.notes:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.notes[pinned="true"] {
+  background-color: rgb(183, 183, 247) !important;
+}
+
+.notes[pinned="true"] .title .pinned:hover {
+  border-color: black !important;
+  color: black !important
+}
+
+.body {
+  word-wrap: break-word;
+}
+
+.page-link {
+  color: black !important
+}
+
+.active>.page-link {
+  background-color: black !important;
+  color: white !important;
 }
