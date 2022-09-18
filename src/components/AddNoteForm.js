@@ -39,7 +39,13 @@ function AddNoteForm() {
     return newErrors;
   }
   const addNotes = () => {
-    const data = [{
+    let pinnedNotes = notes.filter(item => {
+      return item.isPinned;
+    });
+    let unPinnedNotes = notes.filter(item => {
+      return !item.isPinned;
+    });
+    const data = [...pinnedNotes, {
       id: uuid4(),
       title: fields.title,
       tagline: fields.tagline,
@@ -47,7 +53,7 @@ function AddNoteForm() {
       isPinned: false,
       createTime: Date.now(),
       updateTime: Date.now()
-    }, ...notes]
+    }, ...unPinnedNotes]
     dispatch(setNotes(data));
   }
 
